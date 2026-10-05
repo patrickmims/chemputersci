@@ -25,6 +25,10 @@ typedef struct credentials
 credentials_t c;
 credentials_t *credentials = &c;
 
+/* Initialize the database connection with credentials.
+ * This function also does an insert.
+ * Goal: Create separate functions for credentials, read, write, create table etc.
+ * */
 void *db_init()
 {
     puts("* * * * * *");
