@@ -16,6 +16,7 @@ FILE *database_error_log()
     return filePtr;
 }
 
+/*
 typedef struct credentials 
 {
     char *name;
@@ -24,6 +25,7 @@ typedef struct credentials
 
 credentials_t c;
 credentials_t *credentials = &c;
+*/
 
 /* Initialize the database connection with credentials.
  * This function also does an insert.
