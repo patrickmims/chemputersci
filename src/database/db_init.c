@@ -33,9 +33,9 @@ void *initialize_database()
     database = (database_t *)get_memory();
 
     strncpy(credentials->database, "alpaca" ,sizeof(credentials->database));
-    strncpy(credentials->host, "192.168.1.183" ,sizeof(credentials->host));
-    strncpy(credentials->name, "patrick" ,sizeof(credentials->name));
-    strncpy(credentials->password, "2gdx429" ,sizeof(credentials->password));
+    strncpy(credentials->host, "xxxxxx" ,sizeof(credentials->host));
+    strncpy(credentials->name, "xxxxxx" ,sizeof(credentials->name));
+    strncpy(credentials->password, "xxxxxx" ,sizeof(credentials->password));
     strncpy(credentials->table, "fidelity" ,sizeof(credentials->table));
 
     credentials->port = 3306;
