@@ -1,4 +1,5 @@
 #include "cs.h"
+#include "database.h"
 
 FILE *process_db_error()
 {
@@ -21,7 +22,8 @@ void create_db_process(pid_t pid, pthread_t thread)
             fprintf(process_db_error(), "Error: Process Database Error");
             break;
         case 0:
-            db_init();
+            // db_init(); this works, just commented out.
+            initialize_database(); 
             break;
         default:
             sleep(5);

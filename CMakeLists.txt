@@ -16,17 +16,17 @@ include_directories(${PROJECT_SOURCE_DIR})
 pkg_check_modules(MYSQLCLIENT REQUIRED mysqlclient)
 
 add_executable(${PROJECT_NAME} 
-    ${SRC}/main.c
     ${SRC}/database/database.c
+    ${SRC}/database/db_init.c
+    ${SRC}/database/db_singleton.c
     ${SRC}/library/libcurl.c
     ${SRC}/linkedlist/linkedlist.c
     ${SRC}/log/logs.c
-    ${SRC}/process/process_wrapper.c
+    ${SRC}/main.c
     ${SRC}/process/process_db_wrapper.c
-    ${SRC}/thread/thread_wrapper.c
+    ${SRC}/process/process_wrapper.c
     ${SRC}/queue/array_queue.c
-
-    # ${SRC}/queue/array_queue.c
+    ${SRC}/thread/thread_wrapper.c
     # ${SRC}/queue/array_queue.c
     # ${SRC}/queue/array_queue.c
     # ${SRC}/queue/array_queue.c

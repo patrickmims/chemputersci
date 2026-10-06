@@ -10,4 +10,17 @@ typedef struct DB
     MYSQL_ROW row;
 } database_t;
 
+typedef struct
+{
+    char database[10]; 
+    char host[10]; 
+    char name[10]; 
+    char password[10]; 
+    char table[10]; 
+    int port; 
+} credentials_t;  
+
+static void *get_memory();
+void *initialize_database();
+
 #endif
