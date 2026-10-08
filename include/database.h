@@ -12,15 +12,16 @@ typedef struct DB
 
 typedef struct
 {
-    char database[10]; 
-    char host[10]; 
-    char name[10]; 
-    char password[10]; 
-    char table[10]; 
-    int port; 
+    char db[7];
+    char host[15];
+    char user[9];
+    char pword[9];
+    char table[10];
+    int port;
 } credentials_t;  
 
-static void *get_memory();
+void *get_memory();
 void *initialize_database();
+void *db_retrieve_data(database_t *); 
 
 #endif
