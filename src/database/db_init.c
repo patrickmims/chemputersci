@@ -58,7 +58,7 @@ void *db_retrieve_data(database_t *d)
 void *initialize_database()
 {
     credentials_t credentials = { 
-        "database", "host", "user", "pword", "table", 3306
+        // "database", "host", "user", "pword", "table", 3306
     };
 
     database_t d;
