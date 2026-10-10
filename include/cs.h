@@ -22,7 +22,7 @@ struct element
     char category[INDEX_SIZE];
 };
 
-typedef struct LIBCURL
+typedef struct
 {
     CURL *curl;
     CURLcode code;
@@ -47,6 +47,15 @@ struct node
     struct element elem;
     struct node *next;
 };
+
+/*
+typedef struct 
+{
+    int *data;
+} stack_t;
+*/
+
+void create_stack(int);
 
 FILE *linkedlist_error_log();
 FILE *process_error_log();
