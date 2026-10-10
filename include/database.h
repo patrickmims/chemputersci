@@ -12,11 +12,11 @@ typedef struct DB
 
 typedef struct
 {
-    char db[7];
-    char host[15];
-    char user[9];
-    char pword[9];
-    char table[10];
+    const char *db;
+    const char *host;
+    const char *user;
+    const char *pword;
+    const char *table;
     int port;
 } credentials_t;  
 
