@@ -3,12 +3,17 @@
 
 #include "cs.h"
 
-typedef struct DB
+typedef struct
 {
     MYSQL *connection; 
     MYSQL_RES *result;
     MYSQL_ROW row;
 } database_t;
+
+typedef struct
+{
+    char *name;
+} animal_t;
 
 typedef struct
 {

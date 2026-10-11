@@ -19,6 +19,7 @@ add_executable(${PROJECT_NAME}
     ${SRC}/database/database.c
     ${SRC}/database/db_init.c
     ${SRC}/database/db_singleton.c
+    ${SRC}/json/json.c
     ${SRC}/library/libcurl.c
     ${SRC}/linkedlist/linkedlist.c
     ${SRC}/log/logs.c
@@ -26,6 +27,7 @@ add_executable(${PROJECT_NAME}
     ${SRC}/process/process_db_wrapper.c
     ${SRC}/process/process_wrapper.c
     ${SRC}/queue/array_queue.c
+    ${SRC}/species/species.c
     ${SRC}/thread/thread_wrapper.c
     # ${SRC}/queue/array_queue.c
     # ${SRC}/queue/array_queue.c

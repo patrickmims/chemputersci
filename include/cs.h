@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <json-c/json.h>
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -22,6 +23,13 @@ struct element
     char category[INDEX_SIZE];
 };
 
+typedef struct 
+{
+    const char *name;
+    const char *ion;
+    int weight;
+} turtle_t;
+
 typedef struct
 {
     CURL *curl;
@@ -34,6 +42,11 @@ struct Memory
 {
     char *memory;
     size_t size;
+};
+
+struct Object
+{
+    char *file;
 };
 
 struct node
@@ -57,6 +70,7 @@ typedef struct
 
 void create_stack(int);
 
+void happy_turtle(turtle_t *);
 FILE *linkedlist_error_log();
 FILE *process_error_log();
 void *create_node();
@@ -86,5 +100,9 @@ static void *deque(int *);
 
 static int *que_set_front(int);
 static int *que_set_rear(int);
+
+// json
+void json_init();
+FILE *json_error_log();
 
 #endif

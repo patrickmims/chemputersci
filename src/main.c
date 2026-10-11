@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     // create_process(pid, thread);
 
     // return an array pointer to the new queue.
-    int *queue = que_init(10);
+    unsigned int *queue = que_init(10);
 
     // in other words: int queue[10] = {0};
                                
@@ -30,6 +30,23 @@ int main(int argc, char **argv)
     que_insert(queue, 500);
     que_insert(queue, 600);
     que_insert(queue, 700);
+
+    turtle_t t = {"Sodium Chloride", "NaCl"};
+
+    turtle_t list[10];
+
+    list[0].weight = 44;
+    list[1].weight = 57;
+
+    int k;
+
+    for(k = 0; k < 2; k++)
+    {
+    //     printf("list[k].weight -> %s\n", list[k].weight); < something here 
+    }
+
+    happy_turtle(&t); // pass the address of the turtle variable to the function.
+    json_init();                      
 
     printf("peek -> [ %d ]\n", que_peek(queue));
     printf("preview -> [ %d ]\n", que_preview(queue, 1));
