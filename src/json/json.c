@@ -1,5 +1,8 @@
 #include "cs.h"
 
+//-------------------------------------
+// FILE *json_error_log()
+//-------------------------------------
 FILE *json_error_log()
 {
     FILE *filePtr = NULL;
@@ -11,9 +14,8 @@ FILE *json_error_log()
 }
 
 //-------------------------------------
-// void *json_parse(json_object *)
+// void *json_parse(struct json_object *)
 //-------------------------------------
-
 void *json_parse(struct json_object *root_obj)
 {
     json_object *fName = json_object_object_get(root_obj, "firstName");
@@ -23,7 +25,6 @@ void *json_parse(struct json_object *root_obj)
 
     json_object_put(root_obj);
 }
-
 
 //-------------------------------------
 // void *json_read_file(json_object *)
