@@ -44,10 +44,11 @@ struct Memory
     size_t size;
 };
 
-struct Object
+// used with json_init()
+typedef struct
 {
-    char *file;
-};
+    const char *file;
+} object_t;
 
 struct node
 {
@@ -102,7 +103,8 @@ static int *que_set_front(int);
 static int *que_set_rear(int);
 
 // json
-void json_init();
 FILE *json_error_log();
+void json_init();
+void *json_read_file(struct json_object *);
 
 #endif

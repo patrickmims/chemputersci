@@ -50,24 +50,26 @@ void *db_init()
     if((database->connection = mysql_init(NULL)) == NULL)
         fprintf(database_error_log(), "Error: Database...\n");
 
-    if(mysql_real_connect(database->connection, "192.168.1.183", "patrick", "2gdx429", "alpaca", port, NULL, 0) == NULL)
+    if(mysql_real_connect((*database).connection, "host", "name", "pword", "db", port, NULL, 0) == NULL)
     {
         fprintf(stderr, "%s\n", mysql_error(database->connection));
         mysql_close(database->connection);
         exit(1);
     }
 
-    if(mysql_query(database->connection, "SELECT * FROM fidelity"))
+    if(mysql_query((*database).connection, "SELECT * FROM fidelity"))
     {
-        fprintf(stderr, "%s\n", mysql_error(database->connection));
-        mysql_close(database->connection);
+        fprintf(stderr, "%s\n", mysql_error((*database).connection));
+        mysql_close((*database).connection);
         exit(1);
     }
 
-    if((database->result = mysql_store_result(database->connection)) == NULL)
+    // (*database).connection and database->connection are the same.
+    
+    if((database->result = mysql_store_result((*database).connection)) == NULL)
     {
-        fprintf(stderr, "%s\n", mysql_error(database->connection));
-        mysql_close(database->connection);
+        fprintf(stderr, "%s\n", mysql_error((*database).connection));
+        mysql_close((*database).connection);
         exit(1);
     }
 
