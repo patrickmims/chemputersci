@@ -13,6 +13,8 @@ FILE *json_error_log()
     return filePtr;
 }
 
+// void *json_
+
 //-------------------------------------
 // void *json_parse(struct json_object *)
 //-------------------------------------

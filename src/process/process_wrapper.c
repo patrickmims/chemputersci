@@ -13,14 +13,16 @@ void create_process(pid_t pid, pthread_t thread)
 
     switch(pid = fork())
     {
-        case -1: 
+        case -1: // handle error.
             fprintf(process_error_log(), "Error: Process Error");
             break;
-        case 0: 
+        case 0:  // execute the child process
             puts("create_process...");
             // function pointer.
             // has a (void *) param because I'm passing in a data structure.
-            void *(*fn)(void *) = libcurlHTTP;
+            void *(*fn)(void *) = libcurlHTTP; // fn is run in the background
+                                               //
+            // child inherits local variables - local to create_process(...)
             create_thread(thread, fn, head);
             break;
         default: 

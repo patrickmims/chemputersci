@@ -18,6 +18,7 @@ void create_db_process(pid_t pid, pthread_t thread)
     void *(*db)() = db_init; 
     switch(pid = fork())
     {
+        // if a new process can't be created, fork() returns -1
         case -1: 
             fprintf(process_db_error(), "Error: Process Database Error");
             break;
@@ -26,6 +27,7 @@ void create_db_process(pid_t pid, pthread_t thread)
             initialize_database(); 
             break;
         default:
+            puts("I am the parent...");
             sleep(5);
             break;
     }
